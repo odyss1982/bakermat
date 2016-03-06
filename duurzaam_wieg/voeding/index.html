@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Duurzaam begint in de wieg</title>
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  
+  <script>
+  $(function() {
+    $('[id^=dialog]').dialog({
+      minWidth: 900,
+	  autoOpen: false,
+      show: {
+        effect: "blind",
+        duration: 1000
+      },
+      hide: {
+        effect: "explode",
+        duration: 1000
+      }
+    });
+ 
+    $( "#opener1" ).click(function() {
+      $( "#dialog1" ).dialog( "open" );
+    });
+	$( "#opener2" ).click(function() {
+      $( "#dialog2" ).dialog( "open" );
+    });
+	$( "#opener3" ).click(function() {
+      $( "#dialog3" ).dialog( "open" );
+    });
+	$( "#opener4" ).click(function() {
+      $( "#dialog4" ).dialog( "open" );
+    });
+	$( "#opener5" ).click(function() {
+      $( "#dialog5" ).dialog( "open" );
+    });
+  });
+  </script>
+  <style type="text/css">
+    html, body {
+      height: 100%;
+    }
+    body {
+	  background-image: none;
+      background-color: rgb(244, 146, 35);
+	}
+	
+	div.container {
+	  width:900px;
+	  margin-left: auto ;
+	  margin-right: auto ;
+	}
+	
+	div.item {
+		float:left;
+		margin: 30px;
+		cursor: pointer; cursor: hand;
+	}
+  </style>
+  
+</head>
+  
+  <body>
+      <div class="container">
+		  <div id="opener1" class="item">
+			  <img src="img/vlees.jpg" width="200px" style="border:1px;border-radius:10px" />
+		  </div>
+		  <div id="opener2" class="item">
+			   <img src="img/watervoetafdruk.png" width="200px" style="border:1px;border-radius:10px" />
+		  </div>
+		  <div id="opener3" class="item">
+			   <img src="img/borstvoeding.png" width="200px" style="border:1px;border-radius:10px;border-style:solid;border-color:black" />
+		  </div>
+		  <div id="opener4" class="item">
+			   <img src="img/duurzame_vaste_voeding.png" width="200px" style="border:1px;border-radius:10px;border-style:solid;border-color:black" />
+		  </div>
+		  <div id="opener5" class="item">
+			   <img src="img/starten_met_borstvoeding.png" width="200px" style="border:1px;border-radius:10px;border-style:solid;border-color:black" />
+		  </div>
+		  <div id="dialog1" class="item">
+			  <img src="img/vlees.jpg" width="500px" style="border:1px;border-radius:10px" />
+		  </div>
+		  <div id="dialog2" class="item">
+			  <iframe src="img/watervoetafdruk.pdf" scrolling="yes" width="800px" height="800px" style="overflow: hidden; border: 0;"></iframe>
+		  </div>
+		  <div id="dialog3" class="item">
+			  <iframe src="img/borstvoeding.pdf" scrolling="yes" width="800px" height="800px"  style="overflow: hidden; border: 0;"></iframe>
+		  </div>
+		  <div id="dialog4" class="item">
+			  <iframe src="img/duurzame_vaste_voeding.pdf" scrolling="yes" width="800px" height="800px"  style="overflow: hidden; border: 0;"></iframe>
+		  </div>
+		  <div id="dialog5" class="item">
+			  <iframe src="img/starten_met_borstvoeding.pdf" scrolling="yes" width="800px" height="800px"  style="overflow: hidden; border: 0;"></iframe>
+		  </div>
+	  </div>
+	  
+  </body>
+
+</html>

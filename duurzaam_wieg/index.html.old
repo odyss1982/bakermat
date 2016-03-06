@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Duurzaam begint in de wieg</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Google Web Designer 1.3.0.0410">
+  <link rel="stylesheet" href="js/jquery-ui.css">
+  <link rel="stylesheet" href="js/jquery.bxslider.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="js/jquery.bxslider.min.js"></script>
+  <script>
+	$(document).ready(function() {
+        var audioElement = document.createElement('audio');
+        audioElement.setAttribute('src', 'assets/ring.mp3');
+        
+        $('#bike_animation').click(function() {
+            audioElement.play();
+        });
+    });
+	
+    $(document).ready(function() {
+      $('.slider1').bxSlider({
+        slideWidth: 350,
+        minSlides: 3,
+        maxSlides: 3,
+        slideMargin: 10
+      });
+	  //rotateYDIV();
+    });
+	
+	var x,y1,y2,y3,y4,n=0,ny1=0, ny2=40, ny3=80, ny4=120,rotINT,rotYINT;
+	function rotateYDIV() {
+		y1=document.getElementById("rotate3D1")
+		y2=document.getElementById("rotate3D2")
+		y3=document.getElementById("rotate3D3")
+		y4=document.getElementById("rotate3D4")
+		clearInterval(rotYINT)
+		rotYINT=setInterval("startYRotate()",40)
+	}
+	function startYRotate() {
+		ny1=ny1+1; ny2=ny2+1; ny3=ny3+1; ny4=ny4+1
+		y1.style.transform="rotateY(" + ny1 + "deg)"
+		y1.style.webkitTransform="rotateY(" + ny1 + "deg)"
+		y1.style.OTransform="rotateY(" + ny1 + "deg)"
+		y1.style.MozTransform="rotateY(" + ny1 + "deg)"
+		
+		y2.style.transform="rotateY(" + ny2 + "deg)"
+		y2.style.webkitTransform="rotateY(" + ny2 + "deg)"
+		y2.style.OTransform="rotateY(" + ny2 + "deg)"
+		y2.style.MozTransform="rotateY(" + ny2 + "deg)"
+		
+		y3.style.transform="rotateY(" + ny3 + "deg)"
+		y3.style.webkitTransform="rotateY(" + ny3 + "deg)"
+		y3.style.OTransform="rotateY(" + ny3 + "deg)"
+		y3.style.MozTransform="rotateY(" + ny3 + "deg)"
+		
+		y4.style.transform="rotateY(" + ny4 + "deg)"
+		y4.style.webkitTransform="rotateY(" + ny4 + "deg)"
+		y4.style.OTransform="rotateY(" + ny4 + "deg)"
+		y4.style.MozTransform="rotateY(" + ny4 + "deg)"
+		
+		if (ny1>=360) {
+			//clearInterval(rotYINT)
+			if (ny1>=360){ny1=0}
+		}
+		if (ny2>=360) {
+			//clearInterval(rotYINT)
+			if (ny2>=360){ny2=0}
+		}
+		if (ny3>=360) {
+			//clearInterval(rotYINT)
+			if (ny3>=360){ny3=0}
+		}
+		if (ny4>=360) {
+			//clearInterval(rotYINT)
+			if (ny4>=360){ny4=0}
+		}
+	}
+  </script>
+  <style type="text/css">
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+    }
+    body {
+      -webkit-transform: perspective(1200px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+      -webkit-transform-style: preserve-3d;
+      background-image: none;
+      background-color: rgb(244, 146, 35);
+    }
+    .grass {
+      position: absolute;
+      width: 100%;
+      left: 0px;
+      bottom: 0px;
+      height: 69px;
+    }
+    .bike {
+      position: absolute;
+      bottom: 0px;
+      left: 650px;
+      width: 278px;
+      height: 278px;
+    }
+	
+	#bike_animation {
+		background-image: url(assets/bakfiets-met-wortels.png); 
+		background-repeat: no-repeat; 
+		bottom: 0px;
+		width: 278px;
+		height: 278px;
+		background-size:cover;
+		cursor:pointer;
+		position: absolute;
+		-webkit-animation: bike 30s infinite; /* Chrome, Safari, Opera */	
+		-webkit-animation-fill-mode: forwards;	
+		-webkit-transition-timing-function: ease-in-out;
+		animation: bike 30s infinite;
+		animation-fill-mode: forwards;	
+		transition-timing-function: ease-in-out;		
+	}
+
+	/* Chrome, Safari, Opera */
+	@-webkit-keyframes bike {
+		0%   {left:650px; -webkit-transform: rotateY(0deg);}
+		40%   {left:0px; -webkit-transform: rotateY(0deg);}
+		50%  {left:0px; -webkit-transform: rotateY(180deg);} 
+		100% {left:650px; -webkit-transform: rotateY(180deg);}
+	}
+
+	/* Standard syntax */
+	@keyframes bike {
+		0%   {left:650px; transform: rotateY(0deg);}
+		40%   {left:0px; transform: rotateY(0deg);}
+		50%  {left:0px; transform: rotateY(180deg);} 
+		100% {left:650px; transform: rotateY(180deg);}
+	}
+    .gwd-div-gp2h {
+      height:240px;
+      margin-left: auto;
+      margin-right: auto;
+      top: 21px;
+      font-family: 'Times New Roman';
+      width: 684px;
+      border: 2px solid rgb(5, 123, 139);
+      border-radius: 10px;
+      text-align: center;
+      -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+      -webkit-transform-style: preserve-3d;
+      background-image: none;
+      background-color: rgb(255, 255, 255);
+    }
+    .gwd-img-55y7 {
+      position: absolute;
+      height: 191px;
+      width: 172px;
+      left: 14.18%;
+      top: 231px;
+    }
+    .gwd-img-l389 {
+      position: absolute;
+      height: 205px;
+      width: 185px;
+      left: 33.49%;
+      top: 275.5px;
+    }
+    .gwd-img-3gaa {
+      position: absolute;
+      height: 199px;
+      width: 179px;
+      left: 54.26%;
+      top: 231px;
+    }
+    .gwd-img-rzqr {
+      position: absolute;
+      height: 218px;
+      width: 197px;
+      left: 74.02%;
+      top: 256.5px;
+    }
+    .gwd-img-8pu1 {
+      left: 1000px;
+    }
+    .gwd-img-2rt7 {
+      top: 357px;
+    }
+    .gwd-div-x0r5 {
+      -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    .gwd-div-48lj {
+      -webkit-transform-style: preserve-3d;
+    }
+    .gwd-div-47v6 {
+      font-family: 'Times New Roman';
+      text-align: left;
+      height: 166px;
+      padding: 5px;
+      border: 1px solid rgb(5, 123, 139);
+      border-radius: 5px;
+      left: 123px;
+      top: 387px;
+      background-image: none;
+      background-color: rgb(255, 255, 255);
+    }
+    .gwd-div-464g {
+      text-align: center;
+    }
+    .gwd-span-aaud {
+      font-size: 9px;
+    }
+    .gwd-div-nm7b {
+      text-align: center;
+    }
+    .gwd-span-dups {
+      font-size: 9px;
+    }
+    .gwd-img-u7f9 {
+      float: left;
+      margin-right: 5px;
+      border-radius: 5px;
+    }
+    .gwd-span-dgh5 {
+      font-size: 13px;
+    }
+    .gwd-div-8xt7 {
+      width: 297px;
+      height: 145px;
+      left: 14.96%;
+    }
+    .gwd-div-4jpk {
+      height: 18px;
+      width: 263px;
+    }
+    .gwd-span-887y {
+      width: auto;
+    }
+    .gwd-img-y036 {
+      height: 74px;
+      width: 71px;
+    }
+    .gwd-div-qi3s {
+      height: 18px;
+      width: 263px;
+    }
+    .gwd-span-9ou2 {
+      width: auto;
+    }
+    .gwd-br-mqnr {
+      width: auto;
+    }
+    .gwd-div-kvhx {
+      height: 54px;
+      width: 263px;
+    }
+    .gwd-div-tzii {
+      height: 18px;
+      width: 263px;
+    }
+    .gwd-br-ymf3 {
+      width: auto;
+    }
+    .gwd-div-0z5u {
+      height: 54px;
+      width: 263px;
+    }
+    .gwd-span-jl7h {
+      width: auto;
+      font-size: 12px;
+    }
+    .gwd-div-9x8e {
+      left: 121px;
+      width: 250px;
+      height: 145px;
+    }
+    .gwd-span-2822 {
+      font-size: 12px;
+    }
+    .gwd-span-oq68 {
+      font-size: 12px;
+    }
+    .gwd-span-vba9 {
+      font-size: 10px;
+    }
+    .gwd-span-mmle {
+      font-weight: bold;
+    }
+    .gwd-span-rj9b {
+      font-size: 12px;
+    }
+    .gwd-span-vaga {
+      font-size: 10px;
+    }
+    .gwd-span-2r1l {
+      font-size: 12px;
+    }
+    .gwd-span-37vn {
+      font-size: 14px;
+    }
+    .gwd-div-napu {
+      width: 320px;
+      top: 365px;
+      left: 40%;
+    }
+    .gwd-div-d3p9 {
+      height: 18px;
+      width: 297px;
+    }
+    .gwd-span-i1zo {
+      width: auto;
+      font-size: 16px;
+    }
+    .gwd-div-547i {
+      height: 18px;
+      width: 297px;
+    }
+    .gwd-span-i821 {
+      width: auto;
+    }
+    .gwd-br-o2r6 {
+      width: auto;
+    }
+    .gwd-img-4zyc {
+      height: 25px;
+      width: 71px;
+    }
+    .gwd-div-8y07 {
+      width: 297px;
+    }
+    .gwd-div-wyqi {
+      height: 36px;
+      width: 297px;
+    }
+    .gwd-span-scrz {
+      width: auto;
+      font-size: 13px;
+    }
+    .gwd-div-5lop {
+      height: 18px;
+      width: 297px;
+    }
+    .gwd-span-eauy {
+      width: auto;
+    }
+    .gwd-br-wl2e {
+      width: auto;
+    }
+    .gwd-div-0dx5 {
+      height: 54px;
+      width: 297px;
+    }
+    .gwd-span-gngr {
+      width: auto;
+    }
+    .gwd-span-x6f1 {
+      font-size: 13px;
+    }
+    .gwd-span-f359 {
+      font-size: 13px;
+    }
+    .gwd-span-8sdc {
+      font-size: 13px;
+    }
+    .gwd-span-h06p {
+      font-size: 12px;
+    }
+    .gwd-div-e3ns {
+      width: 320px;
+      left: 10%;
+      top: 365px;
+    }
+    .gwd-div-g8k8 {
+      height: 18px;
+      width: 297px;
+    }
+    .gwd-span-4gmr {
+      width: auto;
+    }
+    .gwd-div-wjro {
+      height: 18px;
+      width: 297px;
+    }
+    .gwd-span-ct86 {
+      width: auto;
+    }
+    .gwd-br-4qxh {
+      width: auto;
+    }
+    .ecoplan {
+      width: 30%;
+    }
+    .gwd-img-2noh {
+      height: 74px;
+      width: 71px;
+    }
+    .gwd-div-lonx {
+      width: 297px;
+    }
+    .gwd-div-4cnx {
+      height: 36px;
+      width: 297px;
+    }
+    .gwd-span-ulka {
+      width: auto;
+    }
+    .gwd-div-5jal {
+      height: 18px;
+      width: 297px;
+    }
+    .gwd-span-k9bu {
+      width: auto;
+    }
+    .gwd-br-lxbh {
+      width: auto;
+    }
+    .gwd-div-ho6r {
+      height: 54px;
+      width: 297px;
+    }
+    .gwd-span-1xb3 {
+      width: auto;
+    }
+    .gwd-div-kwzv {
+      width: 320px;
+      top: 365px;
+      left: 70%;
+    }
+    .gwd-div-0jos {
+      height: 145px;
+      width: 320px;
+      left: 40%;
+    }
+    .gwd-div-aapj {
+      width: 320px;
+    }
+    .gwd-span-bs6a {
+      width: auto;
+      font-size: 16px;
+    }
+    .gwd-img-zwlj {
+      width: 71px;
+    }
+    .gwd-div-e1x6 {
+      width: 320px;
+    }
+    .gwd-span-1l57 {
+      width: auto;
+    }
+    .gwd-br-qor5 {
+      width: auto;
+    }
+    .gwd-div-39nf {
+      width: 320px;
+    }
+    .gwd-span-3375 {
+      width: auto;
+    }
+    .gwd-div-z5we {
+      width: 320px;
+    }
+    .gwd-span-mpne {
+      width: auto;
+    }
+    .gwd-div-0rlv {
+      width: 320px;
+      left: 10%;
+    }
+    .gwd-div-11k1 {
+      width: 320px;
+    }
+    .gwd-span-nh7e {
+      width: auto;
+    }
+    .gwd-img-4tob {
+      width: 71px;
+    }
+    .gwd-div-scto {
+      width: 263px;
+    }
+    .gwd-span-nxmu {
+      width: auto;
+    }
+    .gwd-br-6nc7 {
+      width: auto;
+    }
+    .gwd-div-fkxg {
+      width: 320px;
+    }
+    .gwd-span-aro0 {
+      width: auto;
+    }
+    .gwd-div-zkee {
+      width: 320px;
+    }
+    .gwd-span-y60t {
+      width: auto;
+    }
+    .gwd-div-wi74 {
+      width: 320px;
+      top: 539px;
+      left: 70%;
+    }
+    .gwd-div-qbxx {
+      left: 14.96%;
+    }
+    .gwd-span-rq6t {
+      font-size: 16px;
+    }
+    .gwd-span-a9i8 {
+      font-size: 11px;
+    }
+    .gwd-span-sg71 {
+      font-size: 16px;
+    }
+    .gwd-span-oblk {
+      font-size: 13px;
+    }
+    .gwd-span-7qhi {
+      font-size: 14px;
+    }
+    .gwd-span-5tpo {
+      font-size: 11px;
+    }
+    .gwd-span-h97d {
+      font-size: 11px;
+    }
+    .gwd-span-gl6d {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .gwd-span-o1hk {
+      font-size: 10px;
+    }
+    .gwd-span-ejvv {
+      font-weight: bold;
+    }
+    .gwd-span-dxep {
+      font-size: 10px;
+    }
+    .gwd-a-sntb {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+    body.gwd-pause-animation .gwd-gen-gst2gwdanimation {
+      -webkit-animation-play-state: paused !important;
+    }
+    body.gwd-pause-animation .event-1-animation {
+      -webkit-animation-play-state: paused !important;
+    }
+    body .event-1-animation {
+      -webkit-animation: gwd-empty-animation 0s linear 0s 1 normal forwards;
+    }
+    .gwd-div-hmdx {
+      left: 121px;
+      top: 523px;
+    }
+    .gwd-div-3hp7 {
+      left: 119px;
+      top: 365px;
+    }
+    .gwd-div-nirv {
+      -webkit-transform: translate3d(0.05px, 203px, 0px);
+      -webkit-transform-style: preserve-3d;
+    }
+    .gwd-div-a0hn {
+      -webkit-transform: translate3d(0px, 203px, 0px);
+      -webkit-transform-style: preserve-3d;
+      left: 0px;
+      top: 400px;
+    }
+    .gwd-div-8mjt {
+      top: 400px;
+      -webkit-transform: translate3d(0.05px, 203px, 0px);
+      -webkit-transform-style: preserve-3d;
+    }
+    .gwd-div-3o4j {
+      top: 50%;
+    }
+    .gwd-div-opdx {
+      -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+      -webkit-transform-style: preserve-3d;
+    }
+    .gwd-div-tcg2 {
+      top: 0px;
+    }
+    .gwd-div-li9d {
+      -webkit-transform: translate3d(0.05px, 203px, 0px);
+    }
+    .gwd-div-bwes {
+      -webkit-transform-style: preserve-3d;
+    }
+    .gwd-div-jlra {
+      top: 0px;
+    }
+    .gwd-div-n1a0 {
+      -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    .gwd-div-rbh0 {
+      -webkit-transform-style: preserve-3d;
+    }
+    .gwd-a-u6xo {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+    .gwd-a-rxnd {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+    .gwd-a-gbw6 {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+    .gwd-a-xuzt {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+    .gwd-a-gmmk {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+    .gwd-a-awpd {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+    .gwd-a-j1x7 {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+    .gwd-a-gz1j {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+    .gwd-a-thm5 {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+    .gwd-div-r7gk {
+      -webkit-transform: translate3d(0px, 280px, 0px);
+      -webkit-transform-style: preserve-3d;
+    }
+  </style>
+  <script type="text/javascript" gwd-events="support" src="gwd-events-support.1.0.js"></script>
+  <script type="text/javascript" gwd-events="handlers">
+    gwd.auto_BodyEvent_1 = function(event) {
+      // GWD Predefined Function
+      gwd.actions.timeline.pause('document.body');
+    };
+  </script>
+  <script type="text/javascript" gwd-events="registration">
+    // Ondersteuningscode voor gebeurtenisverwerking in Google Web Designer
+     // Dit scriptblok is automatisch gegenereerd. Bewerk dit niet.
+    gwd.actions.events.registerEventHandlers = function(event) {
+      gwd.actions.events.addHandler('document.body', 'event-1', gwd.auto_BodyEvent_1, false);
+      gwd.actions.timeline.captureAnimationEnd(document.body);
+    };
+    gwd.actions.events.deregisterEventHandlers = function(event) {
+      gwd.actions.events.removeHandler('document.body', 'event-1', gwd.auto_BodyEvent_1, false);
+      gwd.actions.timeline.releaseAnimationEnd(document.body);
+    };
+    document.addEventListener("DOMContentLoaded", gwd.actions.events.registerEventHandlers);
+    document.addEventListener("unload", gwd.actions.events.deregisterEventHandlers);
+  </script>
+</head>
+
+<body>
+  <audio id="ring">
+	<source src="assets/ring.mp3"></source>
+  </audio>
+  <img src="assets/stuk-gras_1.png" class="grass" style="">
+  <div id="bike_animation">
+  </div>
+  <div class="gwd-div-gp2h editable">
+    <h2>
+    	“Duurzaam begint in de wieg”  
+    </h2>
+    <p>
+      De Bakermat wil jullie, ouders en zorgverleners, met “Duurzaam begint in de wieg” ondersteunen bij het maken van duurzame keuzes. De ecologische voetafdruk van zo’n baby’tje is immers niet te&nbsp; onderschatten. Er zijn echter veel mogelijkheden. De
+      beslissingen die je maakt rond babykleertjes, verzorging, vervoer en voeding kunnen op een eenvoudige manier bijdragen aan een betere gezondheid voor mens en milieu. Op deze pagina, tijdens de workshops of bij onze vroedvrouwen en duurzaamheidspartners
+      kan je terecht voor ideetjes over milieuvriendelijke geboortekaartjes, verzorgingsproducten, kleding, draagdoeken, borstvoeding... We kijken er naar uit samen met jullie bij te dragen aan een goede toekomst voor de allerkleinsten.
+    </p>
+  </div>
+  <div id="rotate3D1" class="gwd-img-55y7"><a href="http://www.bewustverbruiken.be/artikel/my-fair-baby-duurzame-babykleertjes" target="_blank" style="display:block;text-decoration:none;border:0">
+	<img src="assets/wolk-waslijn-kleding.png" style="width:172px">
+  </a></div>
+  <div id="rotate3D2" class="gwd-img-l389"><a href="assets/bambini_op_pad_met_fiets_en_kids.pdf" target="_parent" style="display:block;text-decoration:none;border:0">
+	<img src="assets/bakfiets-wolk-mobiliteit.png" style="width:172px">
+  </a></div>
+  <div id="rotate3D3" class="gwd-img-3gaa"><a href="http://www.doekjesenbroekjes.be/shop/luiers" target="_blank" style="display:block;text-decoration:none;border:0">
+	<img src="assets/vrouwtje-voeding.png" style="width:172px">
+  </a></div>
+  <div id="rotate3D4" class="gwd-img-rzqr"><a href="http://www.wwf.be/nl/wat-doet-wwf/impact-verminderen/eco-tips/voeding/651" target="_blank" style="display:block;text-decoration:none;border:0">
+	<img src="assets/wolk-met-luiers.png" style="width:172px">
+  </a></div>
+  <div class="slider1 gwd-div-r7gk">
+    <div class="slide">
+      <a style="display: block; color: inherit; text-decoration: none;" href="http://eck.debakermat.be/index.php/workshops/22/event_details" target="_parent">
+        <div class="gwd-div-464g gwd-div-g8k8"><span class="gwd-span-aaud gwd-span-4gmr"><b>Workshop Duurzaam Ouderschap</b></span>
+        </div>
+        <div class="gwd-div-464g gwd-div-wjro"><span class="gwd-span-aaud gwd-span-ct86"><br class="gwd-br-4qxh"></span>
+        </div>
+        <img src="assets/8_may.png" class="gwd-img-u7f9 gwd-img-2noh">
+        <div class="gwd-div-nm7b gwd-div-lonx">
+        </div>
+        <div class="gwd-div-4cnx"><span class="gwd-span-aaud gwd-span-i1zo"><b>Workshop Duurzaam Ouderschap - Week van de Kraamzorg 2015</b></span>
+        </div>
+        <div class="gwd-div-5jal"><span class="gwd-span-oq68 gwd-span-k9bu"><br class="gwd-br-lxbh"></span>
+        </div>
+        <div class="gwd-div-ho6r"><span class="gwd-span-2r1l gwd-span-1xb3">Welke keuzes kan je maken voor de gezonheid van jou en je baby? In deze workshop steek je meer [...]</span>
+        </div>
+      </a>
+    </div>
+    <div class="slide">
+	  <a style="display: block; color: inherit; text-decoration: none;" href="http://eck.debakermat.be/index.php/workshops/25/event_details" target="_parent">
+		  <div class="gwd-div-464g gwd-div-4jpk gwd-div-11k1"><span class="gwd-span-aaud gwd-span-887y gwd-span-nh7e">Bijscholing voor professionelen&nbsp;</span>
+		  </div>
+		  <div class="gwd-div-464g gwd-div-4jpk gwd-div-11k1"><span class="gwd-span-aaud gwd-span-887y gwd-span-nh7e"><br></span>
+		  </div>
+		  <img src="assets/11_may.png" class="gwd-img-u7f9 gwd-img-2noh">
+		  <div class="gwd-div-4cnx"><span class="gwd-span-aaud gwd-span-i1zo"><strong>Bijscholing voor professionelen -&nbsp;</strong></span><span class="gwd-span-rj9b gwd-span-aro0">'Duurzaam&nbsp;</span><span class="gwd-span-rj9b gwd-span-aro0">begint in de wieg'<font size="3">&nbsp;</font></span>
+		  </div>
+		  <div class="gwd-div-5jal"><span class="gwd-span-oq68 gwd-span-k9bu"><br class="gwd-br-lxbh"></span>
+		  </div>
+		  <div class="gwd-div-ho6r"><span class="gwd-span-2r1l gwd-span-1xb3">Zelf snoeten-, billendoekjes en verzorgingsproducten maken die ouders dagdagelijks gebruiken bij de verzorging van hun baby.</span>
+		  </div>
+	   </a>
+    </div>
+    <div class="slide">
+      <a style="display: block; color: inherit; text-decoration: none;" href="http://borstvoeding.debakermat.be/index.php/borstvoeding-buitenshuis/borstvoedingsvriendelijke-locatie/" target="_parent">
+        <div class="gwd-div-464g"><span class="gwd-span-aaud gwd-span-i1zo"><strong>Borstvoedingsvriendelijke organisaties</strong></span>
+        </div>
+        <div class="gwd-div-464g"><span class="gwd-span-aaud"><br></span>
+        </div>
+        <img src="assets/borstvoeding.png" class="gwd-img-u7f9 gwd-img-2noh">
+        <div class="gwd-div-nm7b">
+        </div>
+        <div><span class="gwd-span-2r1l gwd-span-1xb3">Met deze sticker kan je als moeder nagaan of het mogelijk is om je kind borstvoeding te geven in een winkel of horecazaak. <br>Wil je nagaan in welke winkels en horecazaken je borstvoeding mag geven? Klik dan hier.</span>
+        </div>
+      </a>
+    </div>
+    <div class="slide">
+      <a style="display: block; color: inherit; text-decoration: none;" href="http://www.ecoplan.be/" target="_blank">
+        <div class="gwd-div-464g gwd-div-d3p9"><span class="gwd-span-aaud gwd-span-i1zo"><strong>Ecoplan Leuven</strong></span>
+        </div>
+        <div class="gwd-div-464g gwd-div-547i"><span class="gwd-span-aaud gwd-span-i821"><br class="gwd-br-o2r6"></span>
+        </div>
+        <img src="assets/ecoplan.png" class="gwd-img-u7f9 ecoplan"><span class="gwd-span-2r1l gwd-span-1xb3">In kader van het project 'Duurzaam begint in de wieg' van De Bakermat, wordt een roadmap met duurzame plekken ontwikkeld.&nbsp;Dit project wordt ondersteund door de provincie Vlaams-Brabant.&nbsp;Wij zouden uw onderneming graag opnemen in deze Leuvense [...]</span>
+      </a>
+    </div>
+    <div class="slide">
+      <a style="display: block; color: inherit; text-decoration: none;" href="https://www.facebook.com/pages/De-Bakermat-vzw/146497628738927?ref=hl" target="_blank">
+        <div class="gwd-span-aaud gwd-span-i1zo"><span class="gwd-span-aaud gwd-span-i1zo"><strong>Facebookpagina<br><br></strong></span>
+        </div>
+        <img src="assets/facebook.png" class="gwd-img-u7f9 gwd-img-2noh">
+        <div class="gwd-div-nm7b gwd-div-qi3s"><span class="gwd-span-dups gwd-span-9ou2"><br class="gwd-br-mqnr"></span>
+        </div>
+        <div class="gwd-div-kvhx"><span class="gwd-span-2r1l gwd-span-1xb3">Wil je op de hoogte blijven van leuke weetjes rond "Duurzaam begint in de wieg"?</span>
+        </div>
+        <div class="gwd-div-0z5u"><span class="gwd-span-o1hk">Volg ons dan op Facebook! <span class="gwd-span-ejvv">Klik hier.</span></span>
+        </div>
+      </a>
+    </div>
+    <div class="slide">
+      <a style="display: block; color: inherit; text-decoration: none;" href="http://greatclothdiaperchange.com/" target="_blank">
+        <div class="gwd-div-464g gwd-div-4jpk gwd-div-aapj"><span class="gwd-span-aaud gwd-span-887y gwd-span-bs6a"><strong>The Great Cloth Diaper Change</strong></span>
+        </div>
+        <img src="assets/diaper.png" class="gwd-img-u7f9 gwd-img-y036 gwd-img-zwlj">
+        <div class="gwd-div-nm7b gwd-div-qi3s gwd-div-e1x6"><span class="gwd-span-dups gwd-span-9ou2 gwd-span-1l57"><br class="gwd-br-mqnr gwd-br-qor5"></span>
+        </div>
+        <div class="gwd-div-kvhx gwd-div-39nf"><span class="gwd-span-2r1l gwd-span-1xb3">Op zaterdag 18 april vond het vijfde wereldrecord ecologisch verluieren plaats. In Leuven alleen werden 63 baby’s blij van een propere wasbare luier om hun billetjes. De poppenmoeders en - vaders hebben ter plekke ook 23 speelgoedpoepjes duurzaam laten blinken. "Duurzaam begint in de wieg" kreeg voor het eerst [...]</span>
+          <br>
+        </div>
+      </a>
+    </div>
+    <div class="slide">
+      <a style="display: block; color: inherit; text-decoration: none;" href="assets/my_fair_baby_planner.pdf" target="_parent">
+        <div class="gwd-div-464g gwd-div-4jpk gwd-div-aapj"><span class="gwd-span-aaud gwd-span-887y gwd-span-bs6a"><strong>My Fair Baby Planner</strong></span>
+        </div>
+        <img src="assets/baby.png" class="gwd-img-u7f9 gwd-img-y036 gwd-img-zwlj">
+        <div class="gwd-div-nm7b gwd-div-qi3s gwd-div-e1x6"><span class="gwd-span-dups gwd-span-9ou2 gwd-span-1l57"><br class="gwd-br-mqnr gwd-br-qor5"></span>
+        </div>
+        <div class="gwd-div-kvhx gwd-div-39nf"><span class="gwd-span-2r1l gwd-span-1xb3">De My Fair Baby Planner is een papieren poster, die toekomstige en kersverse ouders helpt om eerlijke en duurzame keuzes te maken voor je toekomostige baby. Hij geeft duurzame tips over duurzame geboortekaartjes, doopsuiker, verzorging, voeding, kleding, kamerinrichting, mobiliteit en speelgoed voor de kleine spruit.</span>
+          <br>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="gwd-animation-event event-1-animation" data-event-name="event-1" data-event-time="0.01"></div>
+  <gwd_animation_pause_element></gwd_animation_pause_element>
+</body>
+
+</html>
