@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Duurzaam begint in de wieg</title>
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  
+  <script>
+  $(function() {
+    $('[id^=dialog]').dialog({
+      minWidth: 900,
+	  autoOpen: false,
+      show: {
+        effect: "blind",
+        duration: 1000
+      },
+      hide: {
+        effect: "explode",
+        duration: 1000
+      }
+    });
+ 
+    $( "#opener1" ).click(function() {
+      $( "#dialog1" ).dialog( "open" );
+    });
+	$( "#opener2" ).click(function() {
+      $( "#dialog2" ).dialog( "open" );
+    });
+	$( "#opener3" ).click(function() {
+      $( "#dialog3" ).dialog( "open" );
+    });
+	$( "#opener4" ).click(function() {
+      $( "#dialog4" ).dialog( "open" );
+    });
+  });
+  </script>
+  <style type="text/css">
+    html, body {
+      height: 100%;
+    }
+    body {
+	  background-image: none;
+      background-color: rgb(244, 146, 35);
+	}
+	
+	div.container {
+	  width:900px;
+	  margin-left: auto ;
+	  margin-right: auto ;
+	}
+	
+	div.item {
+		float:left;
+		margin: 30px;
+		cursor: pointer; cursor: hand;
+	}
+  </style>
+  
+</head>
+  
+  <body>
+      <div class="container">
+		  <div id="opener1" class="item">
+			  <img src="img/kleding1.jpg" width="200px" style="border:1px;border-radius:10px" />
+		  </div>
+		  <div id="opener2" class="item">
+			   <img src="img/kleding2.jpg" width="200px" style="border:1px;border-radius:10px" />
+		  </div>
+		  <div id="opener3" class="item">
+			   <img src="img/katoen.jpg" width="200px" style="border:1px;border-radius:10px;border-style:solid;border-color:black" />
+		  </div>
+		  <div id="opener4" class="item">
+			   <img src="img/duurzame_kleding.jpg" width="200px" style="border:1px;border-radius:10px;border-style:solid;border-color:black" />
+		  </div>
+		  <div id="dialog1" class="item">
+			  <img src="img/kleding1.jpg" width="500px" style="border:1px;border-radius:10px" />
+		  </div>
+		  <div id="dialog2" class="item">
+			  <img src="img/kleding2.jpg" width="500px" style="border:1px;border-radius:10px" />
+		  </div>
+		  <div id="dialog3" class="item">
+			  <iframe src="img/katoen.pdf" scrolling="yes" width="800px" height="800px"  style="overflow: hidden; border: 0;"></iframe>
+		  </div>
+		  <div id="dialog4" class="item">
+			  <iframe src="img/duurzame_kleding.pdf" scrolling="yes" width="800px" height="800px"  style="overflow: hidden; border: 0;"></iframe>
+		  </div>
+	  </div>
+	  
+  </body>
+
+</html>
